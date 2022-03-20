@@ -90,10 +90,10 @@
 //     colour: "Grey",
 
 //     eat(){
-//         return `${pet.name} is eating`
+//         return `${pet.name} the ${this.typeOfPet} is eating`
 //     },
 //     drink(){
-//         return `${pet.name} is drinking`
+//         return `${pet.name} is ${this.typeOfPet} drinking`
 //     }
 // }
 // console.log(pet.eat())
@@ -107,24 +107,31 @@
 // They should return a string saying [Your order] is … with all items chosen with costs and total costs. 
 // -----------------------------------
 
+// ***COMMENT*** - found this one hard, managed soem of it but when looking at gist i was way off. I tried doing arrays within 
+// the objects as well as objects within objects but couldn't get the item (key) to show it would only show the value.
 
 orderList = []
 
 const coffeeShop = {
     branch: "North-west",
+
+    drinks: {
     "tea":  1,
     "latte": 1.50,
     "mocha": 2.00,
     "orangeJuice": 2.50,
+    },
+    food:  {
     "toast": 0.4,
     "cupcakes": 1.50,
     "baconButty": 3.00,
     "fullEnglish": 5.00,
+    },
 
     drinksOrder(drink){
         console.log(`You ordered the following drinks...${drink}`)
         orderList.push(drink)
-        if (drink == coffeeShop.key){
+        if (drink == coffeeShop.drinks){
         console.log(orderList.values)
         } else {
             console.log("ERRORRR")
@@ -138,4 +145,53 @@ const coffeeShop = {
 
 coffeeShop.drinksOrder("latte")
 
-
+// ***ANSWER***
+// // const coffeeShop = {
+//     branch: 'Manchester',
+  
+//     drinks: {
+//       americano: 2,
+//       latte: 2.50,
+//       espresso: 1.5,
+//       capuccino: 3,
+//     },
+  
+//     food: {
+//       cookie: 1.5,
+//       muffin: 2,
+//       sandwich: 3,
+//     },
+  
+//     drinksOrdered(...drinks) {
+//       let cost = 0;
+//       const drinksStr = drinks.join(' & ');
+//       drinks.forEach(drink => (cost += this.drinks[drink]));
+//       cost = cost.toString().split('.');
+//       cost[1] = cost[1].padEnd(2, '0');
+//       cost = cost.join('.');
+  
+//       return this.displayOrder(drinksStr, cost);
+//     },
+  
+//     foodOrdered(...food) {
+//       let cost = 0;
+//       const foodStr = food.join(' & ');
+  
+//       food.forEach(item => (cost += this.food[item]));
+  
+//       cost = cost.toString().split('.');
+//       cost[1] = cost[1].padEnd(2, '0');
+//       cost = cost.join('.');
+  
+//       return this.displayOrder(foodStr, cost);
+//     },
+  
+//     displayOrder(order, cost) {
+//       return console.log(
+//         `Your ${order} will be with you shortly, the total is £${cost}.`
+//       );
+//     },
+//   };
+  
+//   coffeeShop.drinksOrdered('capuccino', 'espresso');
+//   coffeeShop.foodOrdered('cookie', 'muffin');

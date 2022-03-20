@@ -217,19 +217,44 @@
 // Find the index of a last vowel in the string
 // -----------------------------------
 
-let myString = "jrfndklhgfndjkjlkgperfijfhdknsadcvjhiiohjfkledsopiuhgtyujwsdxcvhgfdjhiopiwquhejkdsoiufghedjwshi"
-let myStringArray = myString.split('')
-const vowels = ["a", "e", "i", "o", "u"]
-let vowelFound = []
+// **COMMENT** - Found this one hard, couldn't find an answer and found nothing similar to the gist method online. I was trying to 
+// push the charcter which matched the vowels to a empty array and then read from the array the last character pushed. 
+// Not sure I get what is being done in the gist method either.
 
-for(i = 0; i < myString.length; i++){
-    if(myStringArray[i] === vowels.indexOf(i)){
-        vowelFound.push(myStringArray[i])
-        console.log(`The index of the first vowel from the end is ${vowelFound[-1]}`);
-    } else {
-        console.log("There are no vowels in this string...")
-    }
-}
+// let myString = "jrfndklhgfndjkjlkgperfijfhdknsadcvjhiiohjfkledsopiuhgtyujwsdxcvhgfdjhiopiwquhejkdsoiufghedjwshi"
+// const vowels = ["a", "e", "i", "o", "u"]
+// let vowelFound = []
+
+// for(i = 0; i < vowels.length; i++){
+//     indexOfVowel = myString.lastIndexOf(vowels[i])
+//     if(indexOfVowel[i] === vowels.includes()){
+//         vowelFound.push(i)
+//         console.log(`The index of the first vowel from the end is ${vowelFound[-1]}`);
+//     } else {
+//         console.log("There are no vowels in this string...")
+//     }
+// }
+
+// ***ANSWER***
+// let string = 'jrfndklhgfndjkjlkgperfijfhdknsadcvjhiiohjfkledsopiuhgtyujwsdxcvhgfdjhiopiwquhejkdsoiufghedjwshi';
+// let vowelArr = ['a', 'e', 'i', 'o', 'u'];
+// let highestIndex =0;
+
+// for (let i = 0; i < vowelArr.length; i++){
+//   console.log(string.lastIndexOf(vowelArr[i]));
+
+//     index = string.lastIndexOf(vowelArr[i]);
+
+// if (index >= highestIndex ){
+
+//     highestIndex = index;
+
+//     lastVowel = vowelArr[i];
+// }
+// }
+
+// console.log(lastVowel); 
+// console.log(highestIndex)
 
 // ----------------------------------------------------------------------------------------------------------------
 // Activity 9:
@@ -238,13 +263,16 @@ for(i = 0; i < myString.length; i++){
 // the first. If it is return true, otherwise return false.
 // -----------------------------------
 
+// **COMMENT** - This one i found hard, had to use gist to help. Even though I found all the elements needed during research, i couldnt piece it together properly. 
+// e.g. I still dont understand why we can say "word.charAt(0)" in the if statement, then say "word.charAt(word.length-1)" after.
+// "word.charAt(-1)"" causes the statement to be false even if the letters are the same (this is where i got stuck and had to use gist).
+
 // let word = "agga";
 
-
-// if (word.split('')[0] === word.split()[-1]){
-//     console.log("True, they are the same letters")
+// if (word.charAt(0) === word.charAt(word.length-1)){
+//     console.log(`True, the first letter '${word.charAt(0)}' is the same as the last letter '${word.charAt(word.length-1)}'.`)
 // } else {
-//     console.log("False, they are not the same letters...")
+//     console.log(`False, the first letter '${word.charAt(0)}' is NOT the same as the last letter '${word.charAt(word.length-1)}'.`)
 // }
 
 // ----------------------------------------------------------------------------------------------------------------
